@@ -23,6 +23,7 @@ public class AccomodationVO {
 	private String writedate; //등록 날짜
 	private String asubway; //주변 지하철역
 	private int agrade; //숙박업소 평균 평점
+		
 	
 	//페이징
 	private int acurpage; //현재 페이지

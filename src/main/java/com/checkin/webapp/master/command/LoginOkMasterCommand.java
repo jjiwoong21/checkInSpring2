@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.checkin.webapp.Constants;
 import com.checkin.webapp.accomodation.model.AccomodationDAOInterface;
+import com.checkin.webapp.accomodation.model.AccomodationVO;
 import com.checkin.webapp.master.model.MasterDAOInterface;
 import com.checkin.webapp.master.model.MasterVO;
 
@@ -26,15 +27,15 @@ public class LoginOkMasterCommand implements MasterCommandInterface{
 
 	@Override
 	public MasterVO executeVo(HttpServletRequest request, MasterVO vo) {
-	System.out.println("aaaaaaaaaa");
+
 		MasterDAOInterface dao = Constants.sqlSesssion.getMapper(MasterDAOInterface.class);
-		
 		MasterVO vo2 = dao.selectMaster(vo);
 		
 		if(vo2!=null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("mname", vo2.getMname());
 			session.setAttribute("mid", vo2.getMid());
+			session.setAttribute("aname", vo2.getAname());
 			session.setAttribute("type", "M");
 			session.setAttribute("logChk", "Y");
 		}else {

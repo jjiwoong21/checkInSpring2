@@ -2,10 +2,14 @@ package com.checkin.webapp.accomodation.model;
 
 import java.util.List;
 
+import com.checkin.webapp.master.model.MasterVO;
+
 public interface AccomodationDAOInterface {
 	public List<AccomodationVO> selectAllList(AccomodationVO vo);
 	
 	public AccomodationVO selectOneRecord(AccomodationVO vo);
+	
+	public AccomodationVO selectOneRecordMaster(MasterVO vo);
 	
 	public int updateAccomodation(AccomodationVO vo);
 	

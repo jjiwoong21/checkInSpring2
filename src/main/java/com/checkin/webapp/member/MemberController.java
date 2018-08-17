@@ -2,31 +2,20 @@ package com.checkin.webapp.member;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.checkin.webapp.Constants;
+
 import com.checkin.webapp.member.command.LoginOkMemberCommand;
 import com.checkin.webapp.member.model.MemberVO;
 
 @Controller
 public class MemberController{
 		
-	public SqlSession sqlSession;		
-	public SqlSession getSqlSession() {
-		return sqlSession;
-	}
-	@Autowired
-	public void setSqlSession(SqlSession sqlSession) {
-		this.sqlSession = sqlSession;
-		Constants.sqlSesssion = sqlSession;
-	}
-
 	//로그인폼으로 이동
 	// 매핑 경로 : /main/login
 	@RequestMapping("/main/login")

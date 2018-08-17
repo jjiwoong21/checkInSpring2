@@ -87,9 +87,7 @@
 						}else{
 							alert("로그인 성공");
 							location.href="/webapp";
-						}
-						
-						
+						}												
 					},
 					error:function(e){
 						console.log(e);
@@ -109,6 +107,7 @@
 					url:url,
 					data:"mid="+mid+"&mpwd="+mpwd,
 					success:function(result){
+						alert(result.aname);
 						if(result == ""){
 							alert("로그인 실패");
 						}else{

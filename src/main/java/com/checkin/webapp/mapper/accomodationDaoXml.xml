@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.accomodation.model.AccomodationDAOInterface">
-
+	<select id="selectOneRecordMaster" resultType="com.checkin.webapp.accomodation.model.AccomodationVO">
+		select a, mid, aname, atel, aaddr, atype, acheckin, acheckout, asi, agu, agunmul, adong from accomodation where mid=#{mid}
+	</select>
 </mapper>

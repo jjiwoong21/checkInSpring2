@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.checkin.webapp.master.model.MasterDAOInterface">
-	<select id="selectMaster" resultType="com.checkin.webapp.master.model.MasterVO">
-		select m, mid, mpwd,mname from master where mid=#{mid} and mpwd=#{mpwd}
+	<select id="selectMaster" parameterType="com.checkin.webapp.master.model.MasterVO" resultType="com.checkin.webapp.master.model.MasterVO">
+		select m.m, m.mid, a.a a, a.aname aname from master m join accomodation a on m.mid = a.mid where m.mid=#{mid}  
 	</select>
 </mapper>
